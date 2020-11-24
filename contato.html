@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body>
-    <ul>
+    <ul id="menu">
         <li>
             <a href="index.html">Home</a>
         </li>
@@ -14,31 +15,60 @@
             <a href="contato.html">Contato</a>
         </li>
     </ul>
-    <h1>Entre em contato comigo!</h1>
-    <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome">
-        <br>
-        <br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email">
-        <br>
-        <br>
-        <label for="assunto">Assunto:</label><br>
-        <textarea name="assunto" id="assunto" cols="60" rows="10"></textarea>
-        <button>Enviar</button>
-    </form>
-    <h2>Endereço:</h2>
-    <p>Rua Santa Teresa, 52</p>
-    <p>Carapicuiba - SP</p> 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.9762512628236!2d-46.8361394843351!3d-23.533356566445455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf01d03522a5b1%3A0x7dbd0d81e5e1c2e7!2sR.%20Santa%20Teresa%2C%2056%20-%20Jardim%20Carapicuiba%2C%20Carapicu%C3%ADba%20-%20SP%2C%2006322-310!5e0!3m2!1spt-BR!2sbr!4v1605894449219!5m2!1spt-BR!2sbr" 
-          width="600" 
-          height="450" 
-          frameborder="0" 
-          style="border:0;" 
-          allowfullscreen="" 
-          aria-hidden="false" 
-          tabindex="0">
-    </iframe>
+    <h1 class="center">Entre em contato comigo!</h1>
+    <div class="container mb-50">
+        <div>
+            <form>
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" onkeyup='validaNome()'>
+                <div id='txtNome'></div>
+                <br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" onkeyup='validaEmail()'>
+                <div id='txtEmail'></div>
+                <br>
+                <label for="assunto">Assunto:</label><br>
+                <textarea name="assunto" id="assunto" cols="60" rows="10" onkeyup="validaAssunto()"></textarea>
+                <div id='txtAssunto'></div>
+                <br>
+                <br>
+                <button onclick='enviar()'>Enviar</button>
+            </form>
+        </div>
+        <div class="ml-50">
+            <h2>Endereço:</h2>
+            <p>Rua Santa Teresa, 52</p>
+            <p>Carapicuiba - SP</p> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.9762512628236!2d-46.8361394843351!3d-23.533356566445455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf01d03522a5b1%3A0x7dbd0d81e5e1c2e7!2sR.%20Santa%20Teresa%2C%2056%20-%20Jardim%20Carapicuiba%2C%20Carapicu%C3%ADba%20-%20SP%2C%2006322-310!5e0!3m2!1spt-BR!2sbr!4v1605894449219!5m2!1spt-BR!2sbr" 
+                  width="600" 
+                  height="450" 
+                  frameborder="0" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  aria-hidden="false" 
+                  tabindex="0"
+                  id='mapa'
+                  onmouseover='mapaZoom()' onmouseout='mapaNormal()'>
+            </iframe>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/Erick-Neves" target="_blank">
+                <img class="tm-social p-30" src="assets/github.png" alt="Logo do Github">
+            </a>
+            <a href="https://www.instagram.com/erick_snowsg/" target="_blank">
+                <img class="tm-social p-30" src="assets/instagram.png" alt="Logo do Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/erick-neves-aba959151/" target="_blank">
+                <img class="tm-social p-30" src="assets/linkedin.png" alt="Logo do Linkedin">
+            </a> 
+        </div>
+       <p class="center">
+        Todos os direitos reservados: Erick Neves &copy;
+       </p> 
+    </footer>
+    <script src="assets/JS/script.js"></script>
 </body>
 </html>
